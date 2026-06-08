@@ -19,6 +19,9 @@
     <!-- CSS PROPIO -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
+    <!-- JS PROPIO -->
+    <script defer src="./assets/js/sendmoney.js"></script>
+
 </head>
 
 <body>
@@ -54,11 +57,11 @@
         <section>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-6">
-                    <p class="fs-3 fw-bold">Balance de la cuenta: $ <span>60.000</span></p>
-                    <form>
+                    <p class="fs-3 fw-bold">Balance de la cuenta: $ <span id="balance">60.000</span></p>
+                    <form id="formSendMoney">
                         <div class="mb-3">
-                            <label for="contacto" class="form-label">Buscar en la agenda de transferencias</label>
-                            <input type="text" class="form-control" name="contacto" id="contacto"
+                            <label for="buscarContacto" class="form-label">Buscar en la agenda de transferencias</label>
+                            <input type="text" class="form-control" name="buscarContacto" id="buscarContacto"
                                 placeholder="Buscar contacto">
                         </div>
                         <div class="mb-3">
@@ -67,19 +70,15 @@
                         <div class="mb-3">
                             <h2 class="fs-1">Contactos</h2>
 
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    John Doe CBU: 123456789, Alias: john.doe, Banco: ABC Bank
-                                </li>
-                                <li class="list-group-item">
-                                    Jane Smith CBU: 987654321, Alias: jane.smith, Banco: XYZ Bank
-                                </li>
+                            <ul class="list-group" id="listaContactos">
+
+
                             </ul>
                         </div>
 
                         <div class="mb-3">
                             <label for="monto" class="form-label">Monto a transferir:</label>
-                            <input type="number" class="form-control" min="1" placeholder="Ingrese el monto a transferir" id="monto" required>
+                            <input type="number" class="form-control" min="1" placeholder="Ingrese el monto a transferir" id="monto" name="monto" required>
                         </div>
 
                         <div class="mb-3">
